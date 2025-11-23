@@ -116,6 +116,7 @@ SUI_NETWORK=testnet
 OPENAI_API_KEY=sk-...         # Your OpenAI API key
 WALRUS_PUBLISHER_URL=https://publisher-devnet.walrus.space
 WALRUS_AGGREGATOR_URL=https://aggregator-devnet.walrus.space
+VITE_BACKEND_URL=https://backend.onrender.com  # Your backend URL for Vite frontend
 ```
 
 ### Manual Setup
@@ -123,8 +124,12 @@ WALRUS_AGGREGATOR_URL=https://aggregator-devnet.walrus.space
 #### Backend Setup
 ```bash
 cd backend
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+py -3.10 -m venv venv # You will need to install Python 3.10 to be able to install the rerequirements, you may have issues using new versions of python
+
+source venv/bin/activate  
+# On Windows:
+venv\Scripts\activate
+
 pip install -r requirements.txt
 ```
 
@@ -147,7 +152,9 @@ sui client publish --gas-budget 100000000
 ### 1. Start Backend
 ```bash
 cd backend
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  
+# On Windows:
+venv\Scripts\activate
 python run.py
 ```
 Backend will run on `http://localhost:8000`
