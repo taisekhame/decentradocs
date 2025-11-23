@@ -2,7 +2,7 @@ services:
   - type: web
     name: backend
     env: python
-    region: frankfurt
+    pythonVersion: 3.10
+    rootDir: backend   # your backend folder
     buildCommand: pip install -r requirements.txt
     startCommand: python run.py
-    pythonVersion: 3.10
